@@ -16,12 +16,12 @@ module tt_um_tnt_rom_logic_density (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-	reg [7:0] rom[0:255];
+	reg [7:0] rom[0:1023];
 
 	initial
 		$readmemh("data.hex", rom);
 
-	assign uo_out = rom[ui_in];
+	assign uo_out = rom[{uio_in[1:0], ui_in}];
 
 	assign uio_out = 0;
 	assign uio_oe  = 0;
