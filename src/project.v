@@ -16,7 +16,7 @@ module tt_um_tnt_rom_logic_density (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-	reg [7:0] rom[0:895];
+	reg [7:0] rom[0:767];
 
 	initial
 		$readmemh("data.hex", rom);
